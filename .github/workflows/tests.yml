@@ -71,5 +71,8 @@ jobs:
           max_attempts: 5
           command: composer update --${{ matrix.stability }} --no-interaction
 
+      - name: Installed dependencies
+        run: composer show -D
+
       - name: Execute tests
         run: vendor/bin/phpunit --verbose
